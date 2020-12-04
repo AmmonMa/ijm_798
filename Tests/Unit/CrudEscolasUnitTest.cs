@@ -1,10 +1,11 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using System.Threading.Tasks;
 
 namespace Tests.Unit
 {
     [TestFixture]
-    public class EscolaServiceUnitTest
+    public class CrudEscolasUnitTest
     {
         [Test]
         public async Task Return_List_Of_Entities()
