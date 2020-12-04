@@ -1,0 +1,9 @@
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\bin\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.deps.json
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\bin\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\bin\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.pdb
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.csprojAssemblyReference.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.AssemblyInfoInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.AssemblyInfo.cs
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.csproj.CoreCompileInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Application.DAL.UnitOfWork\obj\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.pdb

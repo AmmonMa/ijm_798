@@ -1,5 +1,8 @@
-﻿using Moq;
+﻿using Application.CrossCutting.ViewModels.Escolas;
+using Application.DAL.UnitOfWork;
+using Moq;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Tests.Unit
