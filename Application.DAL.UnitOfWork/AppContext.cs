@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork
 {
-    public class AppContext : DbContext
+    public class AppContext : DbContext, IAppContext
     {
         public AppContext()
         {
@@ -20,6 +21,7 @@ namespace Application.DAL.UnitOfWork
         {
             base.OnModelCreating(modelBuilder);
         }
+
 
         public virtual DbSet<Escola> Escolas { get; set; }
     }
