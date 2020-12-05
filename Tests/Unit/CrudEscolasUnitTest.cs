@@ -1,5 +1,7 @@
 ﻿using Application.CrossCutting.ViewModels.Escolas;
 using Application.DAL.UnitOfWork;
+using Application.DAL.UnitOfWork.Repositories;
+using AutoMapper;
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -55,7 +57,7 @@ namespace Tests.Unit
             unitOfWork.Setup(uow => uow.Escolas).Returns(repository.Object);
 
 
-            var list = await unitOfWork.Escolas.ListAllAsync();
+            var list = await unitOfWork.Object.Escolas.ListAllAsync();
 
             Assert.AreEqual(entityList.Count, list.Count);
         }

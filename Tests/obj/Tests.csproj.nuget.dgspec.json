@@ -81,7 +81,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -94,6 +98,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"

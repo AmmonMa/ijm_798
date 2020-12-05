@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork
 {
-    public class AppContext : DbContext, IAppContext
+    public class AppContext : DbContext
     {
         public AppContext()
         {
