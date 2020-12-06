@@ -3,14 +3,18 @@ using Application.DAL.UnitOfWork;
 using Application.DAL.UnitOfWork.Entities;
 using Application.DAL.UnitOfWork.Repositories;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Moq;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using AppContext = Application.DAL.UnitOfWork.AppContext;
 
 namespace Tests.Unit
 {
@@ -191,13 +195,24 @@ namespace Tests.Unit
         public async Task Should_Remove_Entity_With_Id()
         {
             var ctx = new Mock<AppContext>();
+            ctx
+            .Setup(ctx => ctx.Escolas.Where(It.IsAny<Expression<Func<Escola, bool>>>())
+            .FirstOrDefault(default)).Returns(new Escola
+            {
+                Id = 1,
+                Nome = "Escola Teste 1",
+                RazaoSocial = "Teste 1",
+                Cnpj = "26086811000140",
+                Telefone = "21973521973",
+                Email = "marcos.ammon@gmail.com",
+                Site = "https://www.linkedin.com/in/marcos-vin%C3%ADcius-ammon-02287572/"
+            });
             ctx.Setup(ctx => ctx.Escolas.Remove(It.IsAny<Escola>())).Returns(It.IsAny<EntityEntry<Escola>>());
 
+            var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
+            unitOfWork.Setup(d => d.Escolas).Returns(new EscolaRepository(ctx.Object));
 
-            var unitOfWork = new UnitOfWork(ctx.Object);
-
-
-            await unitOfWork.Escolas.DeleteAsync(1);
+            await unitOfWork.Object.Escolas.DeleteAsync(1);
 
             ctx.Verify(ctx => ctx.Escolas.Remove(It.IsAny<Escola>()), Times.Once);
         }

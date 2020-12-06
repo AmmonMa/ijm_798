@@ -53,7 +53,7 @@ namespace Application.DAL.UnitOfWork.Repositories
 
         public virtual async Task DeleteAsync(int id)
         {
-            var entity = await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
+            var entity = Context.Escolas.Where(x => x.Id == id).FirstOrDefault();
             if (entity == null)
             {
                 throw new Exception("Não existe este id");
