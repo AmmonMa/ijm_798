@@ -10,7 +10,7 @@ namespace Application.DAL.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private IEscolaRepository escolas;
-
+       
         private readonly IMapper Mapper;
         private readonly AppContext Context;
 

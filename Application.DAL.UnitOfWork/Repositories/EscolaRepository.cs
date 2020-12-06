@@ -29,5 +29,37 @@ namespace Application.DAL.UnitOfWork.Repositories
         {
             return Mapper.Map<IList<Escola>, IList<ViewEscolaDTO>>(await Context.Escolas.OrderByDescending(x => x.Id).ToListAsync());
         }
+
+        public virtual async Task<ViewEscolaDTO> FindByIdAsync(int id)
+        {
+            return Mapper.Map<Escola, ViewEscolaDTO>(await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync());
+        }
+
+        public virtual async Task<int> CreateAsync(SaveEscolaDTO obj)
+        {
+            var entity = Mapper.Map<SaveEscolaDTO, Escola>(obj);
+            Context.Escolas.Add(entity);
+            await Context.SaveChangesAsync();
+            return entity.Id;
+        }
+
+        public virtual async Task UpdateAsync(int id, SaveEscolaDTO obj)
+        {
+            var entity = await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
+            Context.Entry(entity).CurrentValues.SetValues(obj);
+
+            await Context.SaveChangesAsync();
+        }
+
+        public virtual async Task DeleteAsync(int id)
+        {
+            var entity = await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
+            if (entity == null)
+            {
+                throw new Exception("Não existe este id");
+            }
+            Context.Escolas.Remove(entity);
+            await Context.SaveChangesAsync();
+        }
     }
 }
