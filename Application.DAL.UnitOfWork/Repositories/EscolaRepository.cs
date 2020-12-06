@@ -25,14 +25,14 @@ namespace Application.DAL.UnitOfWork.Repositories
             Mapper = mapper;
         }
 
-        public virtual async Task<IList<ViewEscolaDTO>> ListAllAsync()
+        public virtual async Task<IList<Escola>> ListAllAsync()
         {
-            return Mapper.Map<IList<Escola>, IList<ViewEscolaDTO>>(await Context.Escolas.OrderByDescending(x => x.Id).ToListAsync());
+            return await Context.Escolas.OrderByDescending(x => x.Id).ToListAsync();
         }
 
-        public virtual async Task<ViewEscolaDTO> FindByIdAsync(int id)
+        public virtual async Task<Escola> FindByIdAsync(int id)
         {
-            return Mapper.Map<Escola, ViewEscolaDTO>(await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync());
+            return await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public virtual async Task<int> CreateAsync(SaveEscolaDTO obj)
@@ -51,15 +51,16 @@ namespace Application.DAL.UnitOfWork.Repositories
             await Context.SaveChangesAsync();
         }
 
-        public virtual async Task DeleteAsync(int id)
+        public virtual async Task<bool> DeleteAsync(int id)
         {
-            var entity = Context.Escolas.Where(x => x.Id == id).FirstOrDefault();
+            var entity = await FindByIdAsync(id);
             if (entity == null)
             {
                 throw new Exception("Não existe este id");
             }
             Context.Escolas.Remove(entity);
             await Context.SaveChangesAsync();
+            return true;
         }
     }
 }

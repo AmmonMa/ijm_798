@@ -25,9 +25,9 @@ namespace Tests.Unit
         public async Task Should_Return_List_Of_Entities()
         {
             var ctx = new Mock<AppContext>();
-            var entityList = new List<ViewEscolaDTO>
+            var entityList = new List<Escola>
             {
-                new ViewEscolaDTO
+                new Escola
                 {
                     Id = 1,
                     Nome = "Escola Teste 1",
@@ -37,7 +37,7 @@ namespace Tests.Unit
                     Email = "marcos.ammon@gmail.com",
                     Site = "https://www.linkedin.com/in/marcos-vin%C3%ADcius-ammon-02287572/"
                 },
-                new ViewEscolaDTO
+                new Escola
                 {
                     Id = 2,
                     Nome = "Escola Teste 2",
@@ -47,7 +47,7 @@ namespace Tests.Unit
                     Email = "marcos.ammon@gmail.com",
                     Site = "https://www.linkedin.com/in/marcos-vin%C3%ADcius-ammon-02287572/"
                 },
-                new ViewEscolaDTO
+                new Escola
                 {
                     Id = 3,
                     Nome = "Escola Teste 3",
@@ -168,7 +168,7 @@ namespace Tests.Unit
         public async Task Should_Retrieve_Entity_With_Id()
         {
             var ctx = new Mock<AppContext>();
-            var dto = new ViewEscolaDTO
+            var entity = new Escola
             {
                 Id = 1,
                 Nome = "Escola Teste 1",
@@ -180,24 +180,22 @@ namespace Tests.Unit
             };
 
             var repository = new Mock<EscolaRepository>(ctx.Object);
-            repository.Setup(r => r.FindByIdAsync(dto.Id)).ReturnsAsync(dto);
+            repository.Setup(r => r.FindByIdAsync(entity.Id)).ReturnsAsync(entity);
 
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
             unitOfWork.Setup(d => d.Escolas).Returns(repository.Object);
 
-            var dtoRetrieved = await unitOfWork.Object.Escolas.FindByIdAsync(dto.Id);
+            var dtoRetrieved = await unitOfWork.Object.Escolas.FindByIdAsync(entity.Id);
 
 
-            Assert.AreEqual(dtoRetrieved.Id, dto.Id);
+            Assert.AreEqual(dtoRetrieved.Id, entity.Id);
         }
 
         [Test]
         public async Task Should_Remove_Entity_With_Id()
         {
             var ctx = new Mock<AppContext>();
-            ctx
-            .Setup(ctx => ctx.Escolas.Where(It.IsAny<Expression<Func<Escola, bool>>>())
-            .FirstOrDefault(default)).Returns(new Escola
+            var entity = new Escola
             {
                 Id = 1,
                 Nome = "Escola Teste 1",
@@ -206,15 +204,19 @@ namespace Tests.Unit
                 Telefone = "21973521973",
                 Email = "marcos.ammon@gmail.com",
                 Site = "https://www.linkedin.com/in/marcos-vin%C3%ADcius-ammon-02287572/"
-            });
-            ctx.Setup(ctx => ctx.Escolas.Remove(It.IsAny<Escola>())).Returns(It.IsAny<EntityEntry<Escola>>());
+            };
+
+            var repository = new Mock<EscolaRepository>(ctx.Object);
+            repository.Setup(r => r.FindByIdAsync(It.IsAny<int>())).ReturnsAsync(entity);
+            repository.Setup(r => r.DeleteAsync(entity.Id)).ReturnsAsync(true);
 
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
-            unitOfWork.Setup(d => d.Escolas).Returns(new EscolaRepository(ctx.Object));
+            unitOfWork.Setup(uow => uow.Escolas).Returns(repository.Object);
 
-            await unitOfWork.Object.Escolas.DeleteAsync(1);
+            var result = await unitOfWork.Object.Escolas.DeleteAsync(entity.Id);
 
-            ctx.Verify(ctx => ctx.Escolas.Remove(It.IsAny<Escola>()), Times.Once);
+            Assert.AreEqual(true, result);
+
         }
 
         [Test]
