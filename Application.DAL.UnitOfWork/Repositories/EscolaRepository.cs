@@ -10,57 +10,21 @@ using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork.Repositories
 {
-    public class EscolaRepository : IEscolaRepository
+    public class EscolaRepository : BaseRepository<SaveEscolaDTO, Escola>, IEscolaRepository
     {
-        private readonly IMapper Mapper;
-        protected AppContext Context;
-
         public EscolaRepository(AppContext context)
         {
             Context = context;
+            DbSet = Context.Escolas;
         }
-        public EscolaRepository(AppContext context, IMapper mapper)
+        public EscolaRepository(AppContext context, IMapper mapper) : this(context)
         {
-            Context = context;
             Mapper = mapper;
         }
 
-        public virtual async Task<IList<Escola>> ListAllAsync()
-        {
-            return await Context.Escolas.OrderByDescending(x => x.Id).ToListAsync();
-        }
-
-        public virtual async Task<Escola> FindByIdAsync(int id)
+        public override async Task<Escola> FindByIdAsync(int id)
         {
             return await Context.Escolas.Include(x => x.Turmas).Where(x => x.Id == id).FirstOrDefaultAsync();
-        }
-
-        public virtual async Task<int> CreateAsync(SaveEscolaDTO obj)
-        {
-            var entity = Mapper.Map<SaveEscolaDTO, Escola>(obj);
-            Context.Escolas.Add(entity);
-            await Context.SaveChangesAsync();
-            return entity.Id;
-        }
-
-        public virtual async Task UpdateAsync(int id, SaveEscolaDTO obj)
-        {
-            var entity = await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
-            Context.Entry(entity).CurrentValues.SetValues(obj);
-
-            await Context.SaveChangesAsync();
-        }
-
-        public virtual async Task<bool> DeleteAsync(int id)
-        {
-            var entity = await FindByIdAsync(id);
-            if (entity == null)
-            {
-                throw new Exception("Não existe este id");
-            }
-            Context.Escolas.Remove(entity);
-            await Context.SaveChangesAsync();
-            return true;
         }
     }
 }

@@ -6,9 +6,8 @@ using System.Text;
 namespace Application.DAL.UnitOfWork.Entities
 {
     [Table("Turmas")]
-    public class Turma
+    public class Turma : BaseEntity
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public int QtdAlunos { get; set; }
         public int EscolaId { get; set; }

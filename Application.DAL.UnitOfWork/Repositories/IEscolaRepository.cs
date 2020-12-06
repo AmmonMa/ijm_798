@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork.Repositories
 {
-    public interface IEscolaRepository
+    public interface IEscolaRepository : IBaseRepository<SaveEscolaDTO, Escola>
     {
-        Task<IList<Escola>> ListAllAsync();
-        Task<int> CreateAsync(SaveEscolaDTO obj);
-        Task UpdateAsync(int id, SaveEscolaDTO obj);
-        Task<Escola> FindByIdAsync(int id);
-        Task<bool> DeleteAsync(int id);
     }
 }

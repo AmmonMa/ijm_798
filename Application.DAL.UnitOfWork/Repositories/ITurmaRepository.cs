@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork.Repositories
 {
-    public interface ITurmaRepository
+    public interface ITurmaRepository : IBaseRepository<SaveTurmaDTO, Turma>
     {
-        Task<IList<Turma>> ListAllAsync();
-        Task<int> CreateAsync(SaveTurmaDTO obj);
-        Task UpdateAsync(int id, SaveTurmaDTO obj);
-        Task<Turma> FindByIdAsync(int id);
-        Task<bool> DeleteAsync(int id);
     }
 }
