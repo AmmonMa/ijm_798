@@ -32,7 +32,7 @@ namespace Application.DAL.UnitOfWork.Repositories
 
         public virtual async Task<Escola> FindByIdAsync(int id)
         {
-            return await Context.Escolas.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await Context.Escolas.Include(x => x.Turmas).Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public virtual async Task<int> CreateAsync(SaveEscolaDTO obj)

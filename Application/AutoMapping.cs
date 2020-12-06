@@ -12,7 +12,8 @@ namespace Application
     {
         public AutoMapping()
         {
-            CreateMap<SaveEscolaDTO, Escola>();
+            CreateMap<SaveEscolaDTO, Escola>().ForMember(x => x.Turmas, act => act.Ignore());
+            CreateMap<SaveTurmaDTO, Turma>();
         }
     }
 }

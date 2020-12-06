@@ -15,6 +15,7 @@ namespace Application.DAL.UnitOfWork.Entities
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string Site { get; set; }
+        public virtual ICollection<Turma> Turmas { get; set; }
 
     }
 }
