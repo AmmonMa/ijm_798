@@ -10,7 +10,8 @@ namespace Application.DAL.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private IEscolaRepository escolas;
-       
+        private ITurmaRepository turmas;
+
         private readonly IMapper Mapper;
         private readonly AppContext Context;
 
@@ -35,6 +36,19 @@ namespace Application.DAL.UnitOfWork
                 }
 
                 return escolas;
+            }
+        }
+
+        public virtual ITurmaRepository Turmas
+        {
+            get
+            {
+                if (turmas == null)
+                {
+                    turmas = new TurmaRepository(Context, Mapper);
+                }
+
+                return turmas;
             }
         }
     }

@@ -8,5 +8,6 @@ namespace Application.DAL.UnitOfWork
     public interface IUnitOfWork
     {
         IEscolaRepository Escolas { get; }
+        ITurmaRepository Turmas { get; }
     }
 }

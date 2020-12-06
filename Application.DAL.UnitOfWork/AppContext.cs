@@ -24,5 +24,6 @@ namespace Application.DAL.UnitOfWork
 
 
         public virtual DbSet<Escola> Escolas { get; set; }
+        public virtual DbSet<Turma> Turmas { get; set; }
     }
 }
