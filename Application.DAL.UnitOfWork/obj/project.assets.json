@@ -720,11 +720,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
+      "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
       "projectName": "Application.DAL.UnitOfWork",
-      "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
+      "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
       "packagesPath": "C:\\Users\\MarcosAmmon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.DAL.UnitOfWork\\obj\\",
+      "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MarcosAmmon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -741,8 +741,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
+            "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
             }
           }
         }

@@ -48,7 +48,7 @@ namespace Application.Controllers
             throw new Exception("Problema encontrado na inserção");
         }
         [HttpPut("{id}")]
-        public async Task<int> Put(int id, SaveEscolaDTO dto)
+        public async Task<int> Put(int id, [FromBody] SaveEscolaDTO dto)
         {
             if (ModelState.IsValid)
             {

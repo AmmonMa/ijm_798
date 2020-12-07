@@ -7,3 +7,12 @@ C:\Users\MarcosAmmon\source\repos\IJM_798\Application.CrossCutting.ViewModels\ob
 C:\Users\MarcosAmmon\source\repos\IJM_798\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\MarcosAmmon\source\repos\IJM_798\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.pdb
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\bin\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.deps.json
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\bin\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\bin\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.pdb
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.csprojAssemblyReference.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.AssemblyInfoInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.AssemblyInfo.cs
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.CrossCutting.ViewModels\obj\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.pdb

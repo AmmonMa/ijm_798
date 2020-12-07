@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H3tOsod1amXGLdUZDKVGEyr3ojC5H1kmuPwmCfV2ifUa6hUU/0UWVtr8lbk8GKr5zkA0IznIu4DbuoIbnhm7UQ==",
+  "dgSpecHash": "wBfXL7k0r6CDMunCLgxE1IXdqg/X9oWP1uycjh5p2t0RQyYRzGEQGjnZ8d3oSJ6d9q2jFuiAUpSbfkE9TGtrSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Tests\\Tests.csproj",
+  "projectFilePath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",

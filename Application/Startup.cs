@@ -27,6 +27,16 @@ namespace Application
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AuthorizedApps",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200");
+                        builder.AllowAnyHeader();
+                        builder.AllowAnyMethod();
+                    });
+            });
             services.AddAutoMapper(c => c.AddProfile<AutoMapping>(), typeof(Startup));
 
             services.AddControllers();
@@ -48,6 +58,7 @@ namespace Application
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("AuthorizedApps");
 
             app.UseAuthorization();
 

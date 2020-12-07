@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/apK6YZ5muJ6bWtb5HxaPkW5X3bD1l0xKzKiGiHflZ2rpjzKkHs3Pw0RZvpe92HBl3QzVNelByp8kNXTBHvsOw==",
+  "dgSpecHash": "XA+aeKMWKldAKFu01xEuntrlaH+nDf8yv4Iapbikx5V0w7Hnci7q+yRXz1qnvyglJ9QATbc+bNyMCw8wd+amNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
+  "projectFilePath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
