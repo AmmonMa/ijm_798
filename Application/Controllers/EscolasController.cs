@@ -41,9 +41,9 @@ namespace Application.Controllers
         {
             if(ModelState.IsValid)
             {
-                var id = UnitOfWork.Escolas.Add(dto).Id;
+                var entity = UnitOfWork.Escolas.Add(dto);
                 await UnitOfWork.CommitAsync();
-                return id;
+                return entity.Id;
             }
             Logger.LogError("Erro de Cadastro de Escola", dto);
             throw new Exception("Problema encontrado na inserção");
