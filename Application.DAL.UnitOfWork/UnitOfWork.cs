@@ -1,6 +1,7 @@
 ﻿
 using Application.DAL.UnitOfWork.Repositories;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,8 +14,9 @@ namespace Application.DAL.UnitOfWork
         private IEscolaRepository escolas;
         private ITurmaRepository turmas;
 
-        private readonly IMapper Mapper;
         private readonly AppContext Context;
+        private IDbContextTransaction transaction;
+        private readonly IMapper Mapper;
 
         public UnitOfWork(AppContext context)
         {
@@ -26,15 +28,19 @@ namespace Application.DAL.UnitOfWork
             Context = context;
             Mapper = mapper;
         }
+        public virtual IDbContextTransaction Transaction { 
+            get
+            {
+                transaction ??= Context.Database.BeginTransaction();
+                return transaction;
+            }
+        }
 
         public virtual IEscolaRepository Escolas
         {
             get
             {
-                if (escolas == null)
-                {
-                    escolas = new EscolaRepository(Context, Mapper);
-                }
+                escolas ??= new EscolaRepository(Context, Mapper);
 
                 return escolas;
             }
@@ -44,24 +50,33 @@ namespace Application.DAL.UnitOfWork
         {
             get
             {
-                if (turmas == null)
-                {
-                    turmas = new TurmaRepository(Context, Mapper);
-                }
+                turmas ??= new TurmaRepository(Context, Mapper);
 
                 return turmas;
             }
         }
+
+
         public async Task CommitAsync()
         {
             await Context.SaveChangesAsync();
+            if (Transaction != null)
+            {
+                await Transaction.CommitAsync();
+            }
         }
         public void Dispose()
         {
+            if (Transaction != null)
+            {
+                Transaction.Dispose();
+            }
+
             if (Context != null)
             {
                 Context.Dispose();
             }
+
             GC.SuppressFinalize(this);
         }
     }

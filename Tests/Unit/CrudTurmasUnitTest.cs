@@ -92,7 +92,6 @@ namespace Tests.Unit
             repository.Verify(r => r.Add(It.IsAny<SaveTurmaDTO>()), Times.Once);
 
             Assert.AreEqual("Turma Teste 1", entity.Nome);
-            Assert.AreEqual(entityId, entity.Id);
         }
 
         [Test]
@@ -165,6 +164,7 @@ namespace Tests.Unit
             var ctx = new Mock<AppContext>();
             var entity = new Turma
             {
+                Id = 1,
                 Nome = "Turma Teste 1",
                 QtdAlunos = 10,
                 EscolaId = 1
@@ -172,14 +172,13 @@ namespace Tests.Unit
 
             var repository = new Mock<TurmaRepository>(ctx.Object);
             repository.Setup(r => r.FindByIdAsync(It.IsAny<int>())).ReturnsAsync(entity);
-            // repository.Setup(r => r.DeleteAsync(entity.Id)).ReturnsAsync(true);
 
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
             unitOfWork.Setup(uow => uow.Turmas).Returns(repository.Object);
 
-            // var result = await unitOfWork.Object.Turmas.DeleteAsync(entity.Id);
+            await unitOfWork.Object.Turmas.DeleteAsync(entity.Id);
 
-           //  Assert.AreEqual(true, result);
+            repository.Verify(r => r.DeleteAsync(1), Times.Once);
 
         }
 

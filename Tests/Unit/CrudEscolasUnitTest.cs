@@ -111,7 +111,6 @@ namespace Tests.Unit
             repository.Verify(r => r.Add(It.IsAny<SaveEscolaDTO>()), Times.Once);
 
             Assert.AreEqual( "Escola Teste 1", entity.Nome );
-            Assert.AreEqual(entityId, entity.Id);
         }
 
         [Test]
@@ -208,16 +207,16 @@ namespace Tests.Unit
 
             var repository = new Mock<EscolaRepository>(ctx.Object);
             repository.Setup(r => r.FindByIdAsync(It.IsAny<int>())).ReturnsAsync(entity);
-            // repository.Setup(r => r.DeleteAsync(entity.Id)).ReturnsAsync(true);
 
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
             unitOfWork.Setup(uow => uow.Escolas).Returns(repository.Object);
 
-            //var result = await unitOfWork.Object.Escolas.DeleteAsync(entity.Id);
+            await unitOfWork.Object.Escolas.DeleteAsync(entity.Id);
 
-           // Assert.AreEqual(true, result);
 
+            repository.Verify(r => r.DeleteAsync(1), Times.Once);
         }
+
 
         [Test]
         public void Should_Return_Error_On_Validation()

@@ -1,4 +1,5 @@
 ﻿using Application.DAL.UnitOfWork.Repositories;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Application.DAL.UnitOfWork
     {
         IEscolaRepository Escolas { get; }
         ITurmaRepository Turmas { get; }
+        IDbContextTransaction Transaction { get; }
         Task CommitAsync();
         void Dispose();
     }
