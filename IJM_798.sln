@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.DAL", "Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.CrossCutting", "Application.CrossCutting", "{EC31F54D-EFA4-4E0C-8AB7-BD2FD4DC9BB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.DAL.UnitOfWork", "Application.DAL.UnitOfWork\Application.DAL.UnitOfWork.csproj", "{177F57F3-88A5-48C6-B731-761749951B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.DAL.UnitOfWork", "Application.DAL.UnitOfWork\Application.DAL.UnitOfWork.csproj", "{177F57F3-88A5-48C6-B731-761749951B45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.CrossCutting.ViewModels", "Application.CrossCutting.ViewModels\Application.CrossCutting.ViewModels.csproj", "{66A34AA6-4BBC-49DA-9F3E-0FBAC3380513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.CrossCutting.ViewModels", "Application.CrossCutting.ViewModels\Application.CrossCutting.ViewModels.csproj", "{66A34AA6-4BBC-49DA-9F3E-0FBAC3380513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{CE453575-6CA3-4DCB-ABD6-32C7BA8B4693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{CE453575-6CA3-4DCB-ABD6-32C7BA8B4693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

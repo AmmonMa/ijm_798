@@ -4,10 +4,11 @@ using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private IEscolaRepository escolas;
         private ITurmaRepository turmas;
@@ -50,6 +51,18 @@ namespace Application.DAL.UnitOfWork
 
                 return turmas;
             }
+        }
+        public async Task CommitAsync()
+        {
+            await Context.SaveChangesAsync();
+        }
+        public void Dispose()
+        {
+            if (Context != null)
+            {
+                Context.Dispose();
+            }
+            GC.SuppressFinalize(this);
         }
     }
 }

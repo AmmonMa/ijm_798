@@ -27,23 +27,20 @@ namespace Application.DAL.UnitOfWork.Repositories
             return await DbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public virtual async Task<int> CreateAsync(T obj)
+        public virtual E Add(T obj)
         {
             var entity = Mapper.Map<T, E>(obj);
             DbSet.Add(entity);
-            await Context.SaveChangesAsync();
-            return entity.Id;
+            return entity;
         }
 
         public virtual async Task UpdateAsync(int id, T obj)
         {
             var entity = await DbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
             Context.Entry(entity).CurrentValues.SetValues(obj);
-
-            await Context.SaveChangesAsync();
         }
 
-        public virtual async Task<bool> DeleteAsync(int id)
+        public virtual async Task DeleteAsync(int id)
         {
             var entity = await FindByIdAsync(id);
             if (entity == null)
@@ -51,8 +48,6 @@ namespace Application.DAL.UnitOfWork.Repositories
                 throw new Exception("Não existe este id");
             }
             DbSet.Remove(entity);
-            await Context.SaveChangesAsync();
-            return true;
         }
     }
 }

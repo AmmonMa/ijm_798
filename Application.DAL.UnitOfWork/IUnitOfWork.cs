@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork
 {
@@ -9,5 +10,7 @@ namespace Application.DAL.UnitOfWork
     {
         IEscolaRepository Escolas { get; }
         ITurmaRepository Turmas { get; }
+        Task CommitAsync();
+        void Dispose();
     }
 }

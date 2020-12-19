@@ -41,7 +41,8 @@ namespace Application.Controllers
         {
             if(ModelState.IsValid)
             {
-                var id = await UnitOfWork.Escolas.CreateAsync(dto);
+                var id = UnitOfWork.Escolas.Add(dto).Id;
+                await UnitOfWork.CommitAsync();
                 return id;
             }
             Logger.LogError("Erro de Cadastro de Escola", dto);
@@ -53,6 +54,7 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 await UnitOfWork.Escolas.UpdateAsync(id, dto);
+                await UnitOfWork.CommitAsync();
                 return id;
             }
             Logger.LogError("Erro de Atualização de Escola", dto);
@@ -60,9 +62,10 @@ namespace Application.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id)
+        public async Task Delete(int id)
         {
-            return await UnitOfWork.Escolas.DeleteAsync(id);
+            await UnitOfWork.Escolas.DeleteAsync(id);
+            await UnitOfWork.CommitAsync();
         }
     }
 }
