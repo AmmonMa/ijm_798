@@ -72,15 +72,15 @@ namespace Tests.Unit
         }
 
         [Test]
-        public void Should_Add_New_Entity_With_Valid_Data()
+        public async Task Should_Add_New_Entity_With_Valid_Data()
         {
             var ctx = new Mock<AppContext>();
             var entity = new Escola();
 
             var repository = new Mock<EscolaRepository>(ctx.Object);
             repository.Setup(repo => repo
-                .Add(It.IsAny<SaveEscolaDTO>()))
-                .Returns(entity)
+                .CreateAsync(It.IsAny<SaveEscolaDTO>()))
+                .ReturnsAsync(entity)
                 .Callback<SaveEscolaDTO>(c => 
                 {
                     entity = new Escola
@@ -98,7 +98,7 @@ namespace Tests.Unit
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
             unitOfWork.Setup(uow => uow.Escolas).Returns(repository.Object);
 
-            var entityId = unitOfWork.Object.Escolas.Add(new SaveEscolaDTO
+            var entityId = await unitOfWork.Object.Escolas.CreateAsync(new SaveEscolaDTO
             {
                 Nome = "Escola Teste 1",
                 RazaoSocial = "Teste 1",
@@ -108,7 +108,7 @@ namespace Tests.Unit
                 Site = "https://www.linkedin.com/in/marcos-vin%C3%ADcius-ammon-02287572/"
             });
 
-            repository.Verify(r => r.Add(It.IsAny<SaveEscolaDTO>()), Times.Once);
+            repository.Verify(r => r.CreateAsync(It.IsAny<SaveEscolaDTO>()), Times.Once);
 
             Assert.AreEqual( "Escola Teste 1", entity.Nome );
         }

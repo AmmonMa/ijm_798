@@ -15,7 +15,7 @@ namespace Application.DAL.UnitOfWork
         private ITurmaRepository turmas;
 
         private readonly AppContext Context;
-        private IDbContextTransaction transaction;
+        private IDbContextTransaction Transaction;
         private readonly IMapper Mapper;
 
         public UnitOfWork(AppContext context)
@@ -27,13 +27,6 @@ namespace Application.DAL.UnitOfWork
         {
             Context = context;
             Mapper = mapper;
-        }
-        public virtual IDbContextTransaction Transaction { 
-            get
-            {
-                transaction ??= Context.Database.BeginTransaction();
-                return transaction;
-            }
         }
 
         public virtual IEscolaRepository Escolas
@@ -55,23 +48,21 @@ namespace Application.DAL.UnitOfWork
                 return turmas;
             }
         }
-
-
         public async Task CommitAsync()
         {
-            await Context.SaveChangesAsync();
-            if (Transaction != null)
-            {
-                await Transaction.CommitAsync();
-            }
+            await Transaction.CommitAsync();
+        }
+        public async Task RollbackAsync()
+        {
+            await Transaction.RollbackAsync();
+        }
+
+        public async Task BeginTransactionAsync()
+        {
+            Transaction = await Context.Database.BeginTransactionAsync(); 
         }
         public void Dispose()
         {
-            if (Transaction != null)
-            {
-                Transaction.Dispose();
-            }
-
             if (Context != null)
             {
                 Context.Dispose();
