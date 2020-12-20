@@ -43,8 +43,7 @@ namespace Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                var entity = UnitOfWork.Turmas.Add(dto);
-                await UnitOfWork.CommitAsync();
+                var entity = await UnitOfWork.Turmas.CreateAsync(dto);
                 return entity.Id;
             }
             Logger.LogError("Erro de Cadastro de Turma", dto);
@@ -56,7 +55,6 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 await UnitOfWork.Turmas.UpdateAsync(id, dto);
-                await UnitOfWork.CommitAsync();
                 return id;
             }
             Logger.LogError("Erro de Atualização de Turma", dto);
@@ -67,7 +65,6 @@ namespace Application.Controllers
         public async Task Delete(int id)
         {
             await UnitOfWork.Turmas.DeleteAsync(id);
-            await UnitOfWork.CommitAsync();
         }
     }
 }
