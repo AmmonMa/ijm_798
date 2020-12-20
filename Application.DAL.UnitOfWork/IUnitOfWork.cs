@@ -11,8 +11,9 @@ namespace Application.DAL.UnitOfWork
     {
         IEscolaRepository Escolas { get; }
         ITurmaRepository Turmas { get; }
-        IDbContextTransaction Transaction { get; }
         Task CommitAsync();
+        Task RollbackAsync();
+        Task BeginTransactionAsync();
         void Dispose();
     }
 }

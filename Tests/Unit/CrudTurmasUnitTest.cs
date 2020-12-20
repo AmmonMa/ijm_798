@@ -66,8 +66,8 @@ namespace Tests.Unit
 
             var repository = new Mock<TurmaRepository>(ctx.Object);
             repository.Setup(repo => repo
-                .Add(It.IsAny<SaveTurmaDTO>()))
-                .Returns(entity)
+                .CreateAsync(It.IsAny<SaveTurmaDTO>()))
+                .ReturnsAsync(entity)
                 .Callback<SaveTurmaDTO>(c =>
                 {
                     entity = new Turma
@@ -82,14 +82,14 @@ namespace Tests.Unit
             var unitOfWork = new Mock<UnitOfWork>(ctx.Object);
             unitOfWork.Setup(uow => uow.Turmas).Returns(repository.Object);
 
-            var entityId = unitOfWork.Object.Turmas.Add(new SaveTurmaDTO
+            var entityId = unitOfWork.Object.Turmas.CreateAsync(new SaveTurmaDTO
             {
                 Nome = "Turma Teste 1",
                 QtdAlunos = 10,
                 EscolaId = 1
             });
 
-            repository.Verify(r => r.Add(It.IsAny<SaveTurmaDTO>()), Times.Once);
+            repository.Verify(r => r.CreateAsync(It.IsAny<SaveTurmaDTO>()), Times.Once);
 
             Assert.AreEqual("Turma Teste 1", entity.Nome);
         }
