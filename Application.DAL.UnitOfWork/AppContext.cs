@@ -17,8 +17,19 @@ namespace Application.DAL.UnitOfWork
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+            base.OnConfiguring(optionsBuilder);
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Turma>()
+                .HasOne(t => t.Escola)
+                .WithMany(e => e.Turmas)
+                .HasForeignKey(t => t.EscolaId)
+                .OnDelete(DeleteBehavior.Cascade);
 
 
             base.OnModelCreating(modelBuilder);

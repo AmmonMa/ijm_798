@@ -15,14 +15,10 @@ namespace Application.Controllers
     [Route("[controller]")]
     public class TurmasController : ControllerBase
     {
-        private readonly ILogger<TurmasController> Logger;
         private readonly IUnitOfWork UnitOfWork;
 
-        public TurmasController(
-            ILogger<TurmasController> logger,
-            IUnitOfWork unitOfWork)
+        public TurmasController(IUnitOfWork unitOfWork)
         {
-            Logger = logger;
             UnitOfWork = unitOfWork;
         }
 
@@ -46,7 +42,6 @@ namespace Application.Controllers
                 var entity = await UnitOfWork.Turmas.CreateAsync(dto);
                 return entity.Id;
             }
-            Logger.LogError("Erro de Cadastro de Turma", dto);
             throw new Exception("Problema encontrado na inserção");
         }
         [HttpPut("{id}")]
@@ -57,7 +52,6 @@ namespace Application.Controllers
                 await UnitOfWork.Turmas.UpdateAsync(id, dto);
                 return id;
             }
-            Logger.LogError("Erro de Atualização de Turma", dto);
             throw new Exception("Problema encontrado na atualização");
         }
 

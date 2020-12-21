@@ -14,14 +14,10 @@ namespace Application.Controllers
     [Route("[controller]")]
     public class EscolasController : ControllerBase
     {
-        private readonly ILogger<EscolasController> Logger;
         private readonly IUnitOfWork UnitOfWork;
 
-        public EscolasController(
-            ILogger<EscolasController> logger,
-            IUnitOfWork unitOfWork)
+        public EscolasController(IUnitOfWork unitOfWork)
         {
-            Logger = logger;
             UnitOfWork = unitOfWork;
         }
 
@@ -44,7 +40,6 @@ namespace Application.Controllers
                 var entity = await UnitOfWork.Escolas.CreateAsync(dto);
                 return entity.Id;
             }
-            Logger.LogError("Erro de Cadastro de Escola", dto);
             throw new Exception("Problema encontrado na inserção");
         }
         [HttpPut("{id}")]
@@ -55,7 +50,6 @@ namespace Application.Controllers
                 await UnitOfWork.Escolas.UpdateAsync(id, dto);
                 return id;
             }
-            Logger.LogError("Erro de Atualização de Escola", dto);
             throw new Exception("Problema encontrado na atualização");
         }
 

@@ -151,3 +151,8 @@ C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcorea
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

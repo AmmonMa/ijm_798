@@ -22,9 +22,5 @@ namespace Application.DAL.UnitOfWork.Repositories
             Mapper = mapper;
         }
 
-        public override async Task<Escola> FindByIdAsync(int id)
-        {
-            return await Context.Escolas.Include(x => x.Turmas).Where(x => x.Id == id).FirstOrDefaultAsync();
-        }
     }
 }

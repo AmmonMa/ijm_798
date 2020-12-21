@@ -230,3 +230,4 @@ C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\Tests.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\Tests.pdb
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\Tests.genruntimeconfig.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll

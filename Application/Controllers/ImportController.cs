@@ -16,20 +16,16 @@ namespace Application.Controllers
     [Route("[controller]")]
     public class ImportController : ControllerBase
     {
-        private readonly ILogger<ImportController> Logger;
         private readonly IUnitOfWork UnitOfWork;
 
-        public ImportController(
-            ILogger<ImportController> logger,
-            IUnitOfWork unitOfWork)
+        public ImportController(IUnitOfWork unitOfWork)
         {
-            Logger = logger;
             UnitOfWork = unitOfWork;
         }
 
         [HttpPost]
         [Route("escolas")]
-        public async Task<IActionResult> Import(IFormFile file)
+        public async Task<IActionResult> Import([FromForm] IFormFile file)
         {
 
             using (var stream = new MemoryStream())
@@ -56,15 +52,14 @@ namespace Application.Controllers
                     if(!TryValidateModel(dto, nameof(dto)))
                     {
                         await UnitOfWork.RollbackAsync();
-                        Logger.LogError("Inclusão em massa realizada com erros", dto);
-                        throw new Exception($"Erro na importação, cheque os dados da linha {rowNum}");
+                        return BadRequest(new { message = $"Erro na importação, cheque os dados da linha {rowNum}" });
                     }
                     await UnitOfWork.Escolas.CreateAsync(dto);
                 }
 
             }
             await UnitOfWork.CommitAsync();
-            return Ok();
+            return Ok(new { message = "Arquivo Importado com Sucesso" });
         }
     }
 }

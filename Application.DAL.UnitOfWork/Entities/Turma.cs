@@ -11,5 +11,6 @@ namespace Application.DAL.UnitOfWork.Entities
         public string Nome { get; set; }
         public int QtdAlunos { get; set; }
         public int EscolaId { get; set; }
+        public virtual Escola Escola { get; set; }
     }
 }

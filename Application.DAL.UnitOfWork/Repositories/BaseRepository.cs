@@ -24,7 +24,7 @@ namespace Application.DAL.UnitOfWork.Repositories
 
         public virtual async Task<E> FindByIdAsync(int id)
         {
-            return await DbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await DbSet.Where(x => x.Id == id).FirstAsync();
         }
 
         public virtual async Task<E> CreateAsync(T obj)

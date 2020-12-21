@@ -39,7 +39,9 @@ namespace Application
             });
             services.AddAutoMapper(c => c.AddProfile<AutoMapping>(), typeof(Startup));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+               options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddDbContext<AppContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("local")));
