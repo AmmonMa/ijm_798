@@ -1,11 +1,8 @@
-﻿using Application.CrossCutting.ViewModels.Escolas;
-using Application.DAL.UnitOfWork;
+﻿using Application.DAL.UnitOfWork;
+using Application.DAL.UnitOfWork.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;

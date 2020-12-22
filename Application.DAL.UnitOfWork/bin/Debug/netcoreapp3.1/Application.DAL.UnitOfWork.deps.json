@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v3.1": {
       "Application.DAL.UnitOfWork/1.0.0": {
         "dependencies": {
-          "Application.CrossCutting.ViewModels": "1.0.0",
           "AutoMapper": "10.1.1",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.0"
@@ -946,11 +945,6 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
-      },
-      "Application.CrossCutting.ViewModels/1.0.0": {
-        "runtime": {
-          "Application.CrossCutting.ViewModels.dll": {}
-        }
       }
     }
   },
@@ -1645,11 +1639,6 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
-    },
-    "Application.CrossCutting.ViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.CrossCutting.ViewModels\Application.CrossCutting.ViewModels.csproj" />
     <ProjectReference Include="..\Application.DAL.UnitOfWork\Application.DAL.UnitOfWork.csproj" />
   </ItemGroup>
 

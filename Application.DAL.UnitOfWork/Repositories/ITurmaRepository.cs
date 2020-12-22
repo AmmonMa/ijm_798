@@ -1,9 +1,5 @@
-﻿using Application.CrossCutting.ViewModels.Escolas;
+﻿using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork.Repositories
 {
