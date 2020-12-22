@@ -1,11 +1,9 @@
-﻿using Application.CrossCutting.ViewModels.Escolas;
-using Application.DAL.UnitOfWork;
+﻿using Application.DAL.UnitOfWork;
+using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Application.Controllers

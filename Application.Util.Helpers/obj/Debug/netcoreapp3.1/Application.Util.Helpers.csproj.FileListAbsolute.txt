@@ -1,0 +1,9 @@
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\bin\Debug\netcoreapp3.1\Application.Util.Helpers.deps.json
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\bin\Debug\netcoreapp3.1\Application.Util.Helpers.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\bin\Debug\netcoreapp3.1\Application.Util.Helpers.pdb
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.csprojAssemblyReference.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.AssemblyInfoInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.AssemblyInfo.cs
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.dll
+C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Application.Util.Helpers\obj\Debug\netcoreapp3.1\Application.Util.Helpers.pdb

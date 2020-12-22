@@ -1442,21 +1442,10 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "Application.CrossCutting.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Application.CrossCutting.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Application.CrossCutting.ViewModels.dll": {}
-        }
-      },
       "Application.DAL.UnitOfWork/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Application.CrossCutting.ViewModels": "1.0.0",
           "AutoMapper": "10.1.1",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.0"
@@ -5397,11 +5386,6 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "Application.CrossCutting.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../Application.CrossCutting.ViewModels/Application.CrossCutting.ViewModels.csproj",
-      "msbuildProject": "../Application.CrossCutting.ViewModels/Application.CrossCutting.ViewModels.csproj"
-    },
     "Application.DAL.UnitOfWork/1.0.0": {
       "type": "project",
       "path": "../Application.DAL.UnitOfWork/Application.DAL.UnitOfWork.csproj",
@@ -5410,7 +5394,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Application.CrossCutting.ViewModels >= 1.0.0",
       "Application.DAL.UnitOfWork >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Moq >= 4.15.2",
@@ -5445,9 +5428,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
-            },
             "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj": {
               "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj"
             }

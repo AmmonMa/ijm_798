@@ -10,8 +10,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Application.CrossCutting.ViewModels\Application.CrossCutting.ViewModels.csproj" />
-  </ItemGroup>
-
 </Project>

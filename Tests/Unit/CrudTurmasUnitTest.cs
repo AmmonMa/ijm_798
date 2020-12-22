@@ -1,5 +1,5 @@
-﻿using Application.CrossCutting.ViewModels.Escolas;
-using Application.DAL.UnitOfWork;
+﻿using Application.DAL.UnitOfWork;
+using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
 using Application.DAL.UnitOfWork.Repositories;
 using Moq;
@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AppContext = Application.DAL.UnitOfWork.AppContext;
 

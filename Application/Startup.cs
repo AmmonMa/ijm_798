@@ -1,4 +1,5 @@
 using Application.DAL.UnitOfWork;
+using Application.Util.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +48,7 @@ namespace Application
                     options.UseSqlServer(Configuration.GetConnectionString("local")));
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<ISpreadsheetHelper, SpreadsheetHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

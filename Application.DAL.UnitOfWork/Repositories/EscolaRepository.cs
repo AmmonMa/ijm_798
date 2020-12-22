@@ -1,12 +1,6 @@
-﻿using Application.CrossCutting.ViewModels.Escolas;
+﻿using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.DAL.UnitOfWork.Repositories
 {

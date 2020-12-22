@@ -218,9 +218,7 @@ C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.dll
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.dll
-C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\Application.CrossCutting.ViewModels.pdb
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\bin\Debug\netcoreapp3.1\Application.DAL.UnitOfWork.pdb
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\Tests.csprojAssemblyReference.cache
 C:\Users\MarcosAmmon\source\repos\IJM_798\Backend\Tests\obj\Debug\netcoreapp3.1\Tests.AssemblyInfoInputs.cache

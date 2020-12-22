@@ -1542,16 +1542,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
-      },
-      "Application.CrossCutting.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Application.CrossCutting.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Application.CrossCutting.ViewModels.dll": {}
-        }
       }
     }
   },
@@ -5681,16 +5671,10 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
-    },
-    "Application.CrossCutting.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../Application.CrossCutting.ViewModels/Application.CrossCutting.ViewModels.csproj",
-      "msbuildProject": "../Application.CrossCutting.ViewModels/Application.CrossCutting.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Application.CrossCutting.ViewModels >= 1.0.0",
       "AutoMapper >= 10.1.1",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Proxies >= 5.0.0"
@@ -5722,11 +5706,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

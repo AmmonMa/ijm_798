@@ -4,14 +4,14 @@
     "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
+    "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj",
-        "projectName": "Application.CrossCutting.ViewModels",
-        "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
+        "projectName": "Application.DAL.UnitOfWork",
+        "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
         "packagesPath": "C:\\Users\\MarcosAmmon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\obj\\",
+        "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MarcosAmmon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj": {
+    "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\Application.Util.Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
-        "projectName": "Application.DAL.UnitOfWork",
-        "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj",
+        "projectUniqueName": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\Application.Util.Helpers.csproj",
+        "projectName": "Application.Util.Helpers",
+        "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\Application.Util.Helpers.csproj",
         "packagesPath": "C:\\Users\\MarcosAmmon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\obj\\",
+        "outputPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MarcosAmmon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,11 +95,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj": {
-                "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.CrossCutting.ViewModels\\Application.CrossCutting.ViewModels.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -98,17 +108,13 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "AutoMapper": {
+            "EPPlus": {
               "target": "Package",
-              "version": "[10.1.1, )"
+              "version": "[5.5.0, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
-              "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -156,6 +162,9 @@
             "projectReferences": {
               "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj": {
                 "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.DAL.UnitOfWork\\Application.DAL.UnitOfWork.csproj"
+              },
+              "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\Application.Util.Helpers.csproj": {
+                "projectPath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application.Util.Helpers\\Application.Util.Helpers.csproj"
               }
             }
           }

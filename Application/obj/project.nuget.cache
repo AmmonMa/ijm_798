@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XTEaVq3zOPhhpxnXxgifgi6SKN8CiaQwc5Vo7yOyTBCN0cKYJfLswrh5rZX+MqAJ+tPvEpc7XIGlTZ2c8BjRjQ==",
+  "dgSpecHash": "U/fj5qGWoAc4t4Q118SkCwGc3lz0UCPYLpYkJxhwhDqUJHBxFoZ6gjhY/GrAelTTaLpIWlYG9AWiFdEFVMT+hA==",
   "success": true,
   "projectFilePath": "C:\\Users\\MarcosAmmon\\source\\repos\\IJM_798\\Backend\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\epplus\\5.5.0\\epplus.5.5.0.nupkg.sha512",
+    "C:\\Users\\MarcosAmmon\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.1\\microsoft.aspnetcore.http.features.5.0.1.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -96,6 +97,7 @@
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\MarcosAmmon\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",
