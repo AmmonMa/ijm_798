@@ -184,7 +184,12 @@ namespace Tests.Unit
         [Test]
         public void Should_Return_Error_On_Validation()
         {
-            var validationModel = new SaveTurmaDTO();
+            var validationModel = new SaveTurmaDTO
+            {
+                Nome = "",
+                QtdAlunos = -10,
+                EscolaId = 0
+            };
             var validationResult = new List<ValidationResult>();
             var validationContext = new System.ComponentModel.DataAnnotations.ValidationContext(validationModel, null, null);
             Validator.TryValidateObject(validationModel, validationContext, validationResult, true);

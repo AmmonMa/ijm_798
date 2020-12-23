@@ -9,7 +9,7 @@ namespace Application.DAL.UnitOfWork.DTO
     {
         [Required]
         public string Nome { get; set; }
-        [Range(1, int.MaxValue)]
+        [Range(0, int.MaxValue)]
         public int QtdAlunos { get; set; }
         [Range(1, int.MaxValue)]
         public int EscolaId { get; set; }
