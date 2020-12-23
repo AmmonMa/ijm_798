@@ -28,7 +28,7 @@ namespace Application.Controllers
 
         [HttpPost]
         [Route("escolas")]
-        public async Task<IActionResult> Import([FromForm] IFormFile file)
+        public async Task<IActionResult> ImportEscolas([FromForm] IFormFile file)
         {
             await UnitOfWork.BeginTransactionAsync();
 
@@ -51,7 +51,7 @@ namespace Application.Controllers
                 await UnitOfWork.Escolas.CreateAsync(dto);
             });
 
-            if(!importResult.Status.Equals(ResultStatus.Succeeded))
+            if(importResult.Status.Equals(ResultStatus.Error))
             {
                 return BadRequest(new { message = importResult.Message });
             }
