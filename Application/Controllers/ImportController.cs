@@ -32,7 +32,7 @@ namespace Application.Controllers
         {
             await UnitOfWork.BeginTransactionAsync();
 
-            var importResult = await xlHelper.Import(file, async row =>
+            var result = await xlHelper.Import(file, async row =>
             {
                 var dto = new SaveEscolaDTO
                 {   
@@ -51,9 +51,9 @@ namespace Application.Controllers
                 await UnitOfWork.Escolas.CreateAsync(dto);
             });
 
-            if(importResult.Status.Equals(ResultStatus.Error))
+            if(result.Status.Equals(ResultStatus.Error))
             {
-                return BadRequest(new { message = importResult.Message });
+                return BadRequest(new { message = result.Message });
             }
 
             await UnitOfWork.CommitAsync();
