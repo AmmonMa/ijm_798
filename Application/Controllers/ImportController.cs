@@ -28,7 +28,7 @@ namespace Application.Controllers
 
         [HttpPost]
         [Route("escolas")]
-        public async Task<IActionResult> ImportEscolas([FromForm] IFormFile file)
+        public async Task<ActionResult> ImportEscolas([FromForm] IFormFile file)
         {
             await UnitOfWork.BeginTransactionAsync();
 

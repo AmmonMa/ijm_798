@@ -2,6 +2,7 @@
 using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,50 +13,96 @@ namespace Application.Controllers
     [Route("[controller]")]
     public class TurmasController : ControllerBase
     {
+        private readonly ILogger<TurmasController> Logger;
         private readonly IUnitOfWork UnitOfWork;
 
-        public TurmasController(IUnitOfWork unitOfWork)
+        public TurmasController(
+            ILogger<TurmasController> logger,
+            IUnitOfWork unitOfWork)
         {
+            Logger = logger;
             UnitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<IList<Turma>> Get()
+        public async Task<ActionResult<IList<Turma>>> Get()
         {
-            return await UnitOfWork.Turmas.ListAllAsync();
+            try
+            {
+                return Ok(await UnitOfWork.Turmas.ListAllAsync());
+            }
+            catch(Exception e)
+            {
+                Logger.LogError(e.Message, e);
+                return BadRequest("Problema desconhecido ao retornar turmas");
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<Turma> Get(int id)
+        public async Task<ActionResult<Turma>> Get(int id)
         {
-            return await UnitOfWork.Turmas.FindByIdAsync(id);
+            try
+            {
+                return Ok(await UnitOfWork.Turmas.FindByIdAsync(id));
+            }
+            catch(Exception e)
+            {
+                Logger.LogError(e.Message, e, id);
+                return BadRequest($"Problema desconhecido ao retornar a turma de id {id}");
+            }
+
         }
 
         [HttpPost]
-        public async Task<int> Post(SaveTurmaDTO dto)
+        public async Task<ActionResult<int>> Post(SaveTurmaDTO dto)
         {
-            if (ModelState.IsValid)
+            if(!ModelState.IsValid)
+            {
+                return BadRequest("Informações de inserção inválidas");
+            }
+            try
             {
                 var entity = await UnitOfWork.Turmas.CreateAsync(dto);
-                return entity.Id;
+                return Ok(entity.Id);
             }
-            throw new Exception("Problema encontrado na inserção");
+            catch(Exception e)
+            {
+                Logger.LogError(e.Message, e, dto);
+                return BadRequest("Problema desconhecido encontrado na inserção");
+            }
         }
         [HttpPut("{id}")]
-        public async Task<int> Put(int id, SaveTurmaDTO dto)
+        public async Task<ActionResult<int>> Put(int id, SaveTurmaDTO dto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                await UnitOfWork.Turmas.UpdateAsync(id, dto);
-                return id;
+                return BadRequest("Informações de atualização inválidas");
             }
-            throw new Exception("Problema encontrado na atualização");
+            try
+            {
+                await UnitOfWork.Turmas.UpdateAsync(id ,dto);
+                return Ok(id);
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e, dto);
+                return BadRequest("Problema desconhecido encontrado na atualização");
+            }
         }
 
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            await UnitOfWork.Turmas.DeleteAsync(id);
+            try
+            {
+                await UnitOfWork.Turmas.DeleteAsync(id);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                Logger.LogError(e.Message, e, id);
+                return BadRequest("Problema desconhecido encontrado na exclusão");
+            }
         }
     }
 }

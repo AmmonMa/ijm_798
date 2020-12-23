@@ -2,6 +2,7 @@
 using Application.DAL.UnitOfWork.DTO;
 using Application.DAL.UnitOfWork.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,49 +13,94 @@ namespace Application.Controllers
     [Route("[controller]")]
     public class EscolasController : ControllerBase
     {
+        private readonly ILogger<EscolasController> Logger;
         private readonly IUnitOfWork UnitOfWork;
 
-        public EscolasController(IUnitOfWork unitOfWork)
+        public EscolasController(
+            ILogger<EscolasController> logger,
+            IUnitOfWork unitOfWork)
         {
+            Logger = logger;
             UnitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<IList<Escola>> Get()
+        public async Task<ActionResult<IList<Escola>>> Get()
         {
-            return await UnitOfWork.Escolas.ListAllAsync();
+            try
+            {
+                return Ok(await UnitOfWork.Escolas.ListAllAsync());
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e);
+                return BadRequest("Problema desconhecido ao retornar escolas");
+            }
         }
         [HttpGet("{id}")]
-        public async Task<Escola> Get(int id)
+        public async Task<ActionResult<Escola>> Get(int id)
         {
-            return await UnitOfWork.Escolas.FindByIdAsync(id);
+            try
+            {
+                return Ok(await UnitOfWork.Escolas.FindByIdAsync(id));
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e, id);
+                return BadRequest($"Problema desconhecido ao retornar a escola de id {id}");
+            }
         }
 
         [HttpPost]
-        public async Task<int> Post(SaveEscolaDTO dto)
+        public async Task<ActionResult<int>> Post(SaveEscolaDTO dto)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Informações de inserção inválidas");
+            }
+            try
             {
                 var entity = await UnitOfWork.Escolas.CreateAsync(dto);
-                return entity.Id;
+                return Ok(entity.Id);
             }
-            throw new Exception("Problema encontrado na inserção");
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e, dto);
+                return BadRequest("Problema desconhecido encontrado na inserção");
+            }
         }
         [HttpPut("{id}")]
-        public async Task<int> Put(int id, [FromBody] SaveEscolaDTO dto)
+        public async Task<ActionResult<int>> Put(int id, [FromBody] SaveEscolaDTO dto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Informações de atualização inválidas");
+            }
+            try
             {
                 await UnitOfWork.Escolas.UpdateAsync(id, dto);
-                return id;
+                return Ok(id);
             }
-            throw new Exception("Problema encontrado na atualização");
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e, dto);
+                return BadRequest("Problema desconhecido encontrado na atualização");
+            }
         }
 
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            await UnitOfWork.Escolas.DeleteAsync(id);
+            try
+            {
+                await UnitOfWork.Escolas.DeleteAsync(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.Message, e, id);
+                return BadRequest("Problema desconhecido encontrado na exclusão");
+            }
         }
     }
 }
